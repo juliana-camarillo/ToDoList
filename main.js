@@ -43,7 +43,7 @@ fecha.innerHTML = FECHA.toLocaleDateString('es-MX', {
 
 });
 
-function agregarTarea(tarea,id,hecho,eliminar) {
+function agregarTarea(tarea, id, hecho, eliminar) {
     if (eliminar) {
         return
     };
@@ -52,14 +52,14 @@ function agregarTarea(tarea,id,hecho,eliminar) {
     const elemento = ` <li id="elemento">
     <i id="${id}" data="hecho" class="bi ${realizado}"></i>
     <p class="tarea-lista text ${LINE}">${tarea}</p>
-    <i id="${id}" data="eliminar" class="bi bi-x"></i>
+    <i id="${id}" data="eliminar" class="bi bi-trash3"></i>
 </li> `
     lista.insertAdjacentHTML("beforeend", elemento);
 };
 
 function tareaRealizada(element) {
-    element.classlist.toggle(check);
-    element.classlist.toggle(uncheck);
+    element.classList.toggle(check);
+    element.classList.toggle(uncheck);
     element.parentNode.querySelector('.text').classlist.toggle(tachado);
     LIST[element.id].realizado = LIST[element.id].realizado ? false :true;
 };
